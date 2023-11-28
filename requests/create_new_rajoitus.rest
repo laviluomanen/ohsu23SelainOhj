@@ -1,0 +1,8 @@
+POST http://localhost:3001/api/rajoitukset
+Content-type: application/json
+
+{
+    "laji": "Lahna",
+    "minpyyntimitta": "Ei alamittaa",
+    "rauhoitusaika": "Ei rauhoitusaikaa"
+}

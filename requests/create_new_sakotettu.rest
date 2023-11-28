@@ -1,0 +1,8 @@
+POST http://localhost:3001/api/sakotetut
+Content-type: application/json
+
+{
+    "nimi": "Ari",
+    "ika": "43",
+    "paikkakunta": "Sipoo"
+}

@@ -1,0 +1,19 @@
+POST http://localhost:3001/api/saaliit
+Content-type: application/json
+
+{
+    "laji": "Ruutana",
+    "suurin_suojeluarvosumma": "null",
+    "rekisteroidyt_saaliit" : [
+        {
+            "id": 49,
+            "paikkakunta": "Seinäjoki",
+            "maara": 3
+        },
+        {
+            "id": 50,
+            "paikkakunta": "Lapua",
+            "maara": 34
+        }
+    ]
+}
