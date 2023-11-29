@@ -431,8 +431,6 @@ const generateId = (arr) => {
     return maxId + 1
 }  
 
-
-
 //Infosivu, jolla näytetään rekisteriin tallennettujen
 //lajien määrä + niiden saaliit
 //sakotetut henkilöt
@@ -484,7 +482,7 @@ app.post('/api/saaliit', (req, res) => {
   //Tarkastetaan, ettei lajia ole jo kirjattuna tauluun
   for(let i=0; i<saaliit.length; i++){
     if(saaliit[i].laji.toLowerCase() === body.laji.toLowerCase()){
-      return res.status(418).json({
+      return res.status(400).json({
         error: 'Laji on jo kirjattu'
     })}
   }
@@ -544,7 +542,7 @@ app.post('/api/rajoitukset', (req, res) => {
     //Tarkastetaan, ettei lajia ole jo kirjattuna tauluun
   for(let i=0; i<saaliit.length; i++){
     if(rajoitukset[i].laji.toLowerCase() === body.laji.toLowerCase()){
-      return res.status(418).json({
+      return res.status(400).json({
         error: 'Laji on jo kirjattu'
     })}
   }
@@ -604,7 +602,7 @@ app.post('/api/sakotetut', (req, res) => {
     if(sakotetut[i].nimi.toLowerCase() === body.nimi.toLowerCase() &&
       sakotetut[i].ika == body.ika &&
       sakotetut[i].paikkakunta.toLowerCase() === body.paikkakunta.toLowerCase()){
-          return res.status(418).json({
+          return res.status(400).json({
             error: 'Tämä kyseinen kaveri on jo kärähtänyt ja merkitty rekisteriin.'
         })
         
