@@ -9,9 +9,7 @@ const requestLogger = (request, response, next) => {
   next()
 }
 
-const unknownEndpoint = (request, response) => {
-  response.status(404).send({ error: 'unknown endpoint' })
-}
+
 
 app.use(express.json())
 app.use(requestLogger)
@@ -628,6 +626,11 @@ app.delete('/api/sakotetut/:id', (req, res) => {
   
     res.status(204).end()
   })
+
+
+  const unknownEndpoint = (request, response) => {
+    response.redirect('./dist/index.html')
+  }
 
 app.use(unknownEndpoint)
 
