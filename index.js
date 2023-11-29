@@ -629,7 +629,7 @@ app.delete('/api/sakotetut/:id', (req, res) => {
 
 
   const unknownEndpoint = (request, response) => {
-    response.redirect('./dist/index.html')
+    response.redirect('/')
   }
 
 app.use(unknownEndpoint)
